@@ -2,8 +2,9 @@ package codecool_week10A_RentManager;
 
 public class IdGenerator
 {
-	public static String generate()
+	public static String generate(Product product)
 	{
-		return "";
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

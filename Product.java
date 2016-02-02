@@ -7,6 +7,13 @@ public abstract class Product
 	private String title;
 	private Person person;
 
+	public Product(String title, Person person)
+	{
+		this.title = title;
+		this.person = person;
+		this.id = IdGenerator.generate(this);
+	}
+
 	public String getTitle()
 	{
 		return title;
@@ -17,9 +24,6 @@ public abstract class Product
 		return person;
 	}
 
-	public static long getInvestment()
-	{
-		return 9999999;
-	}
+	public abstract long getInvestment();
 
 }

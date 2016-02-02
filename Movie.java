@@ -12,6 +12,12 @@ public class Movie extends Product implements Buyable
 	private List<Person> cast = new ArrayList<Person>();
 	private int price;
 
+	public Movie(String title, Person person)
+	{
+		super(title, person);
+		// TODO I need an ArrayList of Person objects not just a single one
+	}
+
 	public Genre getGenre()
 	{
 		return genre;
@@ -62,9 +68,15 @@ public class Movie extends Product implements Buyable
 		this.price = price;
 	}
 
-	public static long getInvestment()
+	@Override
+	public long getInvestment()
 	{
-		return 999999;
+		long total = 0;
+		for (Person person : cast)
+		{
+			total += person.getSalary();
+		}
+		return total;
 	}
 
 }

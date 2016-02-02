@@ -10,6 +10,12 @@ public class Game extends Product implements Buyable
 	private List<Person> staff = new ArrayList<Person>();
 	private int price;
 
+	public Game(String title, Person person)
+	{
+		super(title, person);
+		// TODO I need an ArrayList of Person objects not just a single one
+	}
+
 	public boolean isPreOrdered()
 	{
 		return preOrdered;
@@ -30,9 +36,15 @@ public class Game extends Product implements Buyable
 		this.staff = staff;
 	}
 
+	@Override
 	public int getPrice()
 	{
-		return price;
+		if (isPreOrdered())
+		{
+			price = price - ((price / 100) * 20);
+			return price;
+		}
+		return getPrice();
 	}
 
 	public void setPrice(int price)
@@ -40,9 +52,14 @@ public class Game extends Product implements Buyable
 		this.price = price;
 	}
 
-	public static long getInvestment()
+	public long getInvestment()
 	{
-		return 999999;
+		long total = 0;
+		for (Person person : staff)
+		{
+			total += person.getSalary();
+		}
+		return total;
 	}
 
 }
