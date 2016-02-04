@@ -5,7 +5,7 @@ public class IdGenerator
 	public static String generate(Product product)
 	{
 
-		double randNum = (int) (Math.random() * 1001);
+		double randNum = System.nanoTime();
 		String result = "";
 		if (product instanceof Movie)
 		{

@@ -43,6 +43,8 @@ public class RentManager
 		Book therewerenone = new Book("And Then There Were None", pakko);
 
 		// filling up fields of these Book objects
+		harrypotter.setId();
+		therewerenone.setId();
 		harrypotter.setAuthor(jkrowling);
 		therewerenone.setAuthor(agatha);
 
@@ -51,13 +53,15 @@ public class RentManager
 		Game tetris = new Game("Tetris", jkrowling);
 
 		// filling up fields of these Game objects
+		galaxyshooter.setId();
 		List galaxyshooter_staff = new ArrayList<Person>();
 		galaxyshooter_staff.add(atesz);
 		galaxyshooter_staff.add(szodi);
 		galaxyshooter_staff.add(pakko);
 		galaxyshooter.setStaff(galaxyshooter_staff);
 		galaxyshooter.setPreOrdered(true);
-		galaxyshooter.setPrice(150);
+		galaxyshooter.setPrice(100);
+		tetris.setId();
 		List tetris_staff = new ArrayList<Person>();
 		tetris_staff.add(atesz);
 		tetris_staff.add(agatha);
@@ -71,6 +75,7 @@ public class RentManager
 		Movie godfather = new Movie("The Godfather", pakko);
 
 		// filling up fields of these Movie objects
+		terminator.setId();
 		List terminator_cast = new ArrayList<Person>();
 		terminator_cast.add(szodi);
 		terminator_cast.add(agatha);
@@ -79,6 +84,7 @@ public class RentManager
 		terminator.setGenre(Genre.ACTION);
 		terminator.setPrice(45);
 		terminator.setRate(8.7);
+		godfather.setId();
 		List godfather_cast = new ArrayList<Person>();
 		godfather_cast.add(jkrowling);
 		godfather_cast.add(pakko);
@@ -98,6 +104,13 @@ public class RentManager
 		// calling the getBuyableProducts method
 		System.out.println("The total income of buyable products in the buyables ArrayList:");
 		System.out.println(getBuyableProducts(buyables));
+		System.out.println("\nGenerating IDs");
+		System.out.println(harrypotter.id);
+		System.out.println(therewerenone.id);
+		System.out.println(galaxyshooter.id);
+		System.out.println(tetris.id);
+		System.out.println(terminator.id);
+		System.out.println(godfather.id);
 
 	}
 

@@ -39,12 +39,11 @@ public class Game extends Product implements Buyable
 	@Override
 	public int getPrice()
 	{
-		if (isPreOrdered())
+		if (preOrdered)
 		{
-			price = price - ((price / 100) * 20);
-			return price;
+			price *= 0.8;
 		}
-		return price;
+		return (int) price;
 	}
 
 	public void setPrice(int price)
