@@ -7,8 +7,9 @@ public class Book extends Product
 
 	public Book(String title, Person person)
 	{
-		super(title, person);
-		this.author = person; // ???
+		this.title = title;
+		this.person = person; // this is not the author but the person who
+								// rented the book!
 	}
 
 	public Person getAuthor()

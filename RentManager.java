@@ -1,6 +1,7 @@
 package codecool_week10A_RentManager;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RentManager
 {
@@ -15,6 +16,7 @@ public class RentManager
 		Person pakko = new Person();
 		Person jkrowling = new Person();
 		Person agatha = new Person();
+
 		// filling up fields of these Person objects
 		atesz.setFirstName("Attila");
 		atesz.setLastName("Molnar");
@@ -38,31 +40,57 @@ public class RentManager
 		agatha.setSalary(5500);
 
 		// instantiating Book objects
-		Book harrypotter = new Book("Harry Potter", jkrowling);
-		Book therewerenone = new Book("And Then There Were None", agatha);
+		Book harrypotter = new Book("Harry Potter", atesz);
+		Book therewerenone = new Book("And Then There Were None", pakko);
+
+		// filling up fields of these Book objects
+		harrypotter.setAuthor(jkrowling);
+		therewerenone.setAuthor(agatha);
 
 		// instantiating Game objects
-		ArrayList galaxyshooter_staff = new ArrayList<Person>();
+		Game galaxyshooter = new Game("Galaxy Shooter", agatha);
+		Game tetris = new Game("Tetris", jkrowling);
+
+		// filling up fields of these Game objects
+		List galaxyshooter_staff = new ArrayList<Person>();
 		galaxyshooter_staff.add(atesz);
 		galaxyshooter_staff.add(szodi);
 		galaxyshooter_staff.add(pakko);
-		Game galaxyshooter = new Game("Galaxy Shooter", galaxyshooter_staff);
-		ArrayList tetris_staff = new ArrayList<Person>();
+		galaxyshooter.setStaff(galaxyshooter_staff);
+		galaxyshooter.setPreOrdered(true);
+		galaxyshooter.setPrice(150);
+		List tetris_staff = new ArrayList<Person>();
 		tetris_staff.add(atesz);
 		tetris_staff.add(agatha);
 		tetris_staff.add(szodi);
-		Game tetris = new Game("Tetris", tetris_staff);
-		// filling up fields of these Game objects
-		galaxyshooter.setPreOrdered(true);
-		galaxyshooter.setPrice(150);
+		tetris.setStaff(tetris_staff);
 		tetris.setPreOrdered(false);
 		tetris.setPrice(80);
 
 		// instantiating Movie objects
-		// TODO there are no Movie objects yet
+		Movie terminator = new Movie("Terminator", atesz);
+		Movie godfather = new Movie("The Godfather", pakko);
+
+		// filling up fields of these Movie objects
+		List terminator_cast = new ArrayList<Person>();
+		terminator_cast.add(szodi);
+		terminator_cast.add(agatha);
+		terminator.setCast(terminator_cast);
+		terminator.setDuration(144);
+		terminator.setGenre(Genre.ACTION);
+		terminator.setPrice(45);
+		terminator.setRate(8.7);
+		List godfather_cast = new ArrayList<Person>();
+		godfather_cast.add(jkrowling);
+		godfather_cast.add(pakko);
+		godfather.setCast(godfather_cast);
+		godfather.setDuration(120);
+		godfather.setGenre(Genre.DRAMA);
+		godfather.setPrice(85);
+		godfather.setRate(9.5);
 	}
 
-	public int getBuyableProducts()
+	public int getBuyableProducts(List<Buyable> buyables)
 	{
 		// TODO Write a method which gets a List of buyable objects and returns
 		// with the total preferred income by

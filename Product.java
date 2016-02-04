@@ -3,16 +3,9 @@ package codecool_week10A_RentManager;
 public abstract class Product
 {
 
-	private String id;
-	private String title;
-	private Person person; // the person who rented the product
-
-	public Product(String title, Person person)
-	{
-		this.title = title;
-		this.person = person;
-		this.id = IdGenerator.generate(this);
-	}
+	protected String id;
+	protected String title;
+	protected Person person; // the person who rented the product
 
 	public String getTitle()
 	{

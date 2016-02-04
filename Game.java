@@ -10,10 +10,10 @@ public class Game extends Product implements Buyable
 	private List<Person> staff = new ArrayList<Person>();
 	private int price;
 
-	public Game(String title, ArrayList<Person> staff)
+	public Game(String title, Person person)
 	{
 		this.title = title;
-		this.staff = staff;
+		this.person = person;
 	}
 
 	public boolean isPreOrdered()

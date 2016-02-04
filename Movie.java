@@ -14,8 +14,8 @@ public class Movie extends Product implements Buyable
 
 	public Movie(String title, Person person)
 	{
-		super(title, person);
-		// TODO I need an ArrayList of Person objects not just a single one
+		this.title = title;
+		this.person = person;
 	}
 
 	public Genre getGenre()
