@@ -5,7 +5,6 @@ import java.util.List;
 
 public class RentManager
 {
-
 	public static void main(String[] args)
 	{
 		System.out.println("Codecool Week 10A Task\n");
@@ -88,14 +87,28 @@ public class RentManager
 		godfather.setGenre(Genre.DRAMA);
 		godfather.setPrice(85);
 		godfather.setRate(9.5);
+
+		// creating an arraylist of buyable products
+		List buyables = new ArrayList<Product>();
+		buyables.add(galaxyshooter);
+		buyables.add(tetris);
+		buyables.add(terminator);
+		buyables.add(godfather);
+
+		// calling the getBuyableProducts method
+		System.out.println("The total income of buyable products in the buyables ArrayList:");
+		System.out.println(getBuyableProducts(buyables));
+
 	}
 
-	public int getBuyableProducts(List<Buyable> buyables)
+	public static int getBuyableProducts(List<Buyable> buyables)
 	{
-		// TODO Write a method which gets a List of buyable objects and returns
-		// with the total preferred income by
-		// summarizing the prices of the products in the parameter.
-		return 0;
+		int total = 0;
+		for (Buyable buyable : buyables)
+		{
+			total += buyable.getPrice();
+		}
+		return total;
 	}
 
 }

@@ -8,8 +8,7 @@ public class Book extends Product
 	public Book(String title, Person person)
 	{
 		this.title = title;
-		this.person = person; // this is not the author but the person who
-								// rented the book!
+		this.person = person; // the person who rented the book!
 	}
 
 	public Person getAuthor()
@@ -26,6 +25,12 @@ public class Book extends Product
 	public long getInvestment()
 	{
 		return author.getSalary();
+	}
+
+	@Override
+	public void setId()
+	{
+		this.id = IdGenerator.generate(this);
 	}
 
 }

@@ -79,4 +79,9 @@ public class Movie extends Product implements Buyable
 		return total;
 	}
 
+	@Override
+	public void setId()
+	{
+		this.id = IdGenerator.generate(this);
+	}
 }

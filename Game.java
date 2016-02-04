@@ -44,7 +44,7 @@ public class Game extends Product implements Buyable
 			price = price - ((price / 100) * 20);
 			return price;
 		}
-		return getPrice();
+		return price;
 	}
 
 	public void setPrice(int price)
@@ -52,6 +52,7 @@ public class Game extends Product implements Buyable
 		this.price = price;
 	}
 
+	@Override
 	public long getInvestment()
 	{
 		long total = 0;
@@ -62,4 +63,9 @@ public class Game extends Product implements Buyable
 		return total;
 	}
 
+	@Override
+	public void setId()
+	{
+		this.id = IdGenerator.generate(this);
+	}
 }
