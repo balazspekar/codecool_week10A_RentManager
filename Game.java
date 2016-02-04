@@ -10,10 +10,10 @@ public class Game extends Product implements Buyable
 	private List<Person> staff = new ArrayList<Person>();
 	private int price;
 
-	public Game(String title, Person person)
+	public Game(String title, ArrayList<Person> staff)
 	{
-		super(title, person);
-		// TODO I need an ArrayList of Person objects not just a single one
+		this.title = title;
+		this.staff = staff;
 	}
 
 	public boolean isPreOrdered()

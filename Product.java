@@ -5,7 +5,7 @@ public abstract class Product
 
 	private String id;
 	private String title;
-	private Person person;
+	private Person person; // the person who rented the product
 
 	public Product(String title, Person person)
 	{
