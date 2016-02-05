@@ -28,4 +28,4 @@ There is another important modification since the last version of the applicatio
 This particular task is not a productive application. It's intended to teach inheritance, abstract classes and interfaces in a simple way.
 For an advanved dev this code might look a bit noobish but keep in mind I'm still at the early stage of learning JAVA quirks.
 I think I started to get the hang of access modifiers and interfaces which is a good thing indeed.
-I also realized that creating an UML representation of the proect is absolutely crucial when it comes to OOP design.
+I also realized that creating a UML representation of the project is absolutely crucial when it comes to OOP design.
